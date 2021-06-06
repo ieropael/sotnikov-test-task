@@ -18,3 +18,12 @@ button.addEventListener('click', () => {
   i > 5 ? i = 0 : i++;
 });
 document.body.append(button);
+
+const inputField = document.createElement('input');
+const outputField = document.createElement('input');
+inputField.addEventListener('input', () => {
+  inputField.value = inputField.value.replace(/[^\d,.]/g, '');
+  outputField.value = inputField.value.split(',').reduce((acc, curr) => acc + +curr, 0);
+});
+
+document.body.append(inputField, outputField);
