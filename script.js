@@ -141,8 +141,11 @@ $('li').each(function(i, item) {
 $.ajax(
   'test.php',
   {
-      success: function(data) {
-        makeTask('Task 2.3').append(data);
-      }
-   },
+    success: (data) => {
+      makeTask('Task 2.3').append(data);
+    },
+    error: () => {
+      alert('Ошибка при получении данных');
+    },
+  },
 );
