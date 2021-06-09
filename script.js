@@ -133,3 +133,16 @@ document.body.append(h3);
 $('li').each(function(i, item) {
   item.innerHTML = item.innerHTML.replaceAll('пункт №', '');
 });
+
+
+
+// Task 2.3
+
+$.ajax(
+  'test.php',
+  {
+      success: function(data) {
+        makeTask('Task 2.3').append(data);
+      }
+   },
+);
